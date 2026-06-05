@@ -1,0 +1,19 @@
+Project Title
+Electronics Inventory Management System
+Objective
+To design a database system that manages electronic products like mobiles, laptops, and earphones.
+Modules
+Inventory Management
+Stock Monitoring
+Smart Discount System
+User
+Admin
+Admin can:
+Copy code
+
+Add product
+Update product
+Delete product
+View stock
+Check low stock alerts
+Manage discounts

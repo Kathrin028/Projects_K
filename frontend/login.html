@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* MAIN BACKGROUND */
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #8e2de2, #4facfe);
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1000px;
+    height:550px;
+    display:flex;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* LEFT SIDE */
+.left{
+    flex:1;
+    background:
+        linear-gradient(rgba(142,45,226,0.8), rgba(79,172,254,0.8)),
+        url("https://images.unsplash.com/photo-1526378722484-cc5c5107bcb5");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.left h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.left p{
+    font-size:15px;
+    opacity:0.9;
+}
+
+/* RIGHT SIDE */
+.right{
+    flex:1;
+    background:#f9f9f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* LOGIN BOX */
+.login-box{
+    background:white;
+    padding:35px;
+    width:300px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.login-box h2{
+    margin-bottom:20px;
+    color:#444;
+}
+
+/* INPUT BOX */
+.input-box{
+    position:relative;
+    margin:12px 0;
+}
+
+.input-box span{
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:16px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px 12px 12px 35px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    outline:none;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background: linear-gradient(135deg, #8e2de2, #4facfe);
+    border:none;
+    border-radius:6px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+/* EXTRA TEXT */
+.extra{
+    margin-top:10px;
+    font-size:12px;
+    color:#777;
+}
+
+.extra a{
+    color:#8e2de2;
+    text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+        <h1>Welcome to Inventory</h1>
+        <p>Manage your products efficiently with smart analytics</p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <div class="login-box">
+            <h2>Login</h2>
+
+            <div class="input-box">
+                <span>👤</span>
+                <input type="text" id="username" placeholder="Username">
+            </div>
+
+            <div class="input-box">
+                <span>🔒</span>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+
+            <button onclick="login()">Login</button>
+
+            <div class="extra">
+                Forgot password?
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function login(){
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "admin"){
+        localStorage.setItem("username", user);
+        window.location.href = "index.html";
+    }else{
+        alert("Invalid login!");
+    }
+}
+</script>
+
+</body>
+</html>
